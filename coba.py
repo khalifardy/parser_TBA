@@ -1,7 +1,16 @@
-#%%
-from library import FiniteAutomata
+# %%
+from library import LexicalAnalyzer, Parser, FiniteAutomata
 
-fa = FiniteAutomata("/asa")
-#fa.fa_if()
-fa.fa_operator()
+stri = input()
+spl = stri.split()
+lexi = LexicalAnalyzer()
+token = [lexi.analysis(string) for string in spl]
+parser = Parser()
+if parser.output(token):
+    print("Sring "+stri, " Valid")
+else:
+    print("String " + stri + " Tidak Valid")
+
+# %%
+fin = FiniteAutomata("=")
 # %%
